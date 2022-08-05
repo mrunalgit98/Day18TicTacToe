@@ -4,10 +4,13 @@ import java.util.Scanner;
 
 public class TicTacToe {
     static char[] game;
+    static char player;
+    static char computer;
+    static int location=0;
     static void board(){
         game=new char[10];
-        for(int i=0;i<10;i++){
-            game[i]='.';
+        for(int i=0;i<9;i++){
+            game[i]='*';
         }
     }
     static void input(){
@@ -43,6 +46,22 @@ public class TicTacToe {
 
     }
 
+    static void play(){
+        while (location < 9){
+            Scanner sc1 =new Scanner(System.in);
+            System.out.println("enter position from 0 to 9");
+            int position = sc1.nextInt();
+            if(game[position]=='*'){
+                game[position]=player;
+                showBoard();
+                location++;
+                play();
+            }else {
+                System.out.println("invalid ");
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
         System.out.println("welcome to the game");
@@ -50,5 +69,6 @@ public class TicTacToe {
         board();
         input();
         showBoard();
+        play();
     }
 }
