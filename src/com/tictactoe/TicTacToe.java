@@ -22,6 +22,25 @@ public class TicTacToe {
             computer ='X';
             System.out.println("Position " +player);
         }
+
+
+    }
+    static void showBoard(){
+        System.out.println("|---|---|---|");
+        System.out.println("| " + game[0] + " | "
+                + game[1] + " | " + game[2]
+                + " |");
+        System.out.println("|-----------|");
+        System.out.println("| " + game[3] + " | "
+                +
+                game[4] + " | " + game[5]
+                + " |");
+        System.out.println("|-----------|");
+        System.out.println("| " + game[6] + " | "
+                + game  [7] + " | " + game[8]
+                + " |");
+        System.out.println("|---|---|---|");
+
     }
 
     public static void main(String[] args) {
@@ -30,5 +49,6 @@ public class TicTacToe {
 
         board();
         input();
+        showBoard();
     }
 }
