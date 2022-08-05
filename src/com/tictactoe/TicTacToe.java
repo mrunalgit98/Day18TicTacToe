@@ -13,6 +13,8 @@ public class TicTacToe {
             game[i]='*';
         }
     }
+    
+    
     static void input(){
         Scanner sc=new Scanner(System.in);
         System.out.println("choose X OR O ");
@@ -61,12 +63,23 @@ public class TicTacToe {
             }
         }
     }
+    static void toss(){
+
+        int result=(int)Math.floor(Math.random()*10);
+        if(result==1){
+            System.out.println("Player has won");
+        }else {
+            System.out.println("computer has won");
+        }
+
+    }
 
     public static void main(String[] args) {
 
         System.out.println("welcome to the game");
 
         board();
+        toss();
         input();
         showBoard();
         play();
